@@ -2,7 +2,7 @@ pipeline {
     agent {
         node {
             label 'develop-test'
-            customWorkspace '/var/www/$BRANCH_NAME'
+            customWorkspace '/var/www/${BRANCH_NAME}'
         }
     }
 
