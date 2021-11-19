@@ -9,7 +9,7 @@ pipeline {
         stage('prepare-dir') {
             steps {
                 sh 'printenv'
-                fileOperations([folderCreateOperation('/var/www/${env.BRANCH_NAME}')])
+                sh 'mkdir -p /var/www/${env.BRANCH_NAME}'
             }
         }
 
