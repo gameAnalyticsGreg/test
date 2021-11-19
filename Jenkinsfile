@@ -4,19 +4,6 @@ pipeline {
             label 'develop-test'
         }
     }
-    triggers {
-        GenericTrigger(
-            causeString: 'Github webhook build',
-            genericVariables: [
-                [defaultValue: 'main', key: 'BRANCH_NAME', regexpFilter: 'refs/heads/', value: '$.ref']
-
-            ],
-            regexpFilterExpression: '',
-            regexpFilterText: '',
-            token: '',
-            tokenCredentialId: ''
-        )
-    }
 
     stages {
         stage('prepare-dir') {
