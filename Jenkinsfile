@@ -16,7 +16,7 @@ pipeline {
         stage('checkout') {
             steps {
                 sh 'printenv'
-                git(url: 'https://github.com/gameAnalyticsGreg/test', branch: '${env.BRANCH_NAME}', credentialsId: 'git')
+                git(url: 'https://github.com/gameAnalyticsGreg/test', branch: '$BRANCH_NAME', credentialsId: 'git')
             }
         }
     }
