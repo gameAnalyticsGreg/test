@@ -7,19 +7,25 @@ pipeline {
     }
 
     stages {
-        stage('prepare-dir') {
+        stage('Prepare directories') {
+            steps {
+                // do chmods etc
+                sh 'printenv'
+            }
+        }
+
+        stage('Prepare assets'){
+            when { changeset "**/*.js" }
             steps {
                 sh 'printenv'
             }
         }
 
-        stage('checkout') {
+        stage('Run tests') {
+            when { not { branch 'master'} }
             steps {
                 sh 'printenv'
             }
         }
     }
 }
-
-// custom code:
-// when { branch 'master' }
