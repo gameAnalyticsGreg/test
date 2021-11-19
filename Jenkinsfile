@@ -9,7 +9,7 @@ pipeline {
         stage('prepare-dir') {
             steps {
                 sh 'printenv'
-                sh 'mkdir -p /var/www/${env.BRANCH_NAME}'
+                sh '''mkdir -p /var/www/$BRANCH_NAME'''
             }
         }
 
