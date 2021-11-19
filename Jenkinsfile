@@ -21,6 +21,5 @@ pipeline {
     }
 }
 
-
 // custom code:
 // when { branch 'master' }
