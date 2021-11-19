@@ -16,6 +16,7 @@ pipeline {
         stage('checkout') {
             steps {
                 sh 'printenv'
+                
                 checkout(
                     [
                         $class: 'GitSCM',
