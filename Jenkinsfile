@@ -44,7 +44,7 @@ pipeline {
                         keepAll: false,
                         reportDir: 'tests/_output/',
                         reportFiles: 'records.html',
-                        reportName: 'HTML Report',
+                        reportName: 'Report',
                         reportTitles: ''
                     ])
                 }
