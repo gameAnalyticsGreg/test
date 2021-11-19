@@ -8,13 +8,15 @@ pipeline {
     stages {
         stage('prepare-dir') {
             steps {
-                dir(path: '/var/www/${BRANCH_NAME}')
+                sh 'printenv'
+                dir(path: '/var/www/${env.BRANCH_NAME}')
             }
         }
 
         stage('checkout') {
             steps {
-                git(url: 'https://github.com/gameAnalyticsGreg/test', branch: '${BRANCH_NAME}', credentialsId: 'git')
+                sh 'printenv'
+                git(url: 'https://github.com/gameAnalyticsGreg/test', branch: '${env.BRANCH_NAME}', credentialsId: 'git')
             }
         }
     }
