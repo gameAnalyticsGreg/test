@@ -1,4 +1,6 @@
 pipeline {
+    properties([pipelineTriggers([githubPush()])])
+
     agent {
         node {
             label 'develop-test'
@@ -18,3 +20,7 @@ pipeline {
         }
     }
 }
+
+
+// custom code:
+// when { branch 'master' }
