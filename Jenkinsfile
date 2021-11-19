@@ -1,6 +1,4 @@
 pipeline {
-    options([pipelineTriggers([githubPush()])])
-
     agent {
         node {
             label 'develop-test'
