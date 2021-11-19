@@ -16,13 +16,6 @@ pipeline {
         stage('checkout') {
             steps {
                 sh 'printenv'
-//                 dir('/var/www/$BRANCH_NAME') {
-//                     git(
-//                         url: 'https://github.com/gameAnalyticsGreg/test',
-//                         branch: '$BRANCH_NAME',
-//                         credentialsId: 'git'
-//                     )
-//                 }
                 checkout(
                     [
                         $class: 'GitSCM',
