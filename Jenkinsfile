@@ -6,6 +6,11 @@ pipeline {
         }
     }
 
+    options {
+        // Keep the 10 most recent builds
+        buildDiscarder(logRotator(numToKeepStr:'50'))
+    }
+
     stages {
         stage('Prepare directories') {
             steps {
