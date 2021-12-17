@@ -4,6 +4,10 @@ pipeline {
             label 'develop-test'
             customWorkspace "/var/www/${BRANCH_NAME}"
         }
+        node {
+            label 'jenkins-test'
+            customWorkspace "/var/www/${BRANCH_NAME}"
+        }
     }
 
     stages {
